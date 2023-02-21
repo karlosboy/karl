@@ -1,19 +1,21 @@
 static void Main(string[] args)
         {
-            
-            Dictionary<string, int> schoolNames = new Dictionary<string, int>();
-            schoolNames.Add("Laagna Kool", 12345);
-            schoolNames.Add("Mustamäe Kool", 54321);
-            schoolNames.Add("Viimsi Kool", 98765);
+            Console.WriteLine("Kooli nimed");
 
-            
-            foreach (KeyValuePair<string, int> school in schoolNames)
+            Dictionary<int, string> schools = new Dictionary<int, string>();
             {
-                Console.WriteLine(school.Key + ": " + school.Value);
+                schools.Add(1, "Viimsi Kool");
+                schools.Add(2,"Pirita Kool");
+                schools.Add(3, "Pärnu Kool");
+            };
+
+
+            foreach (KeyValuePair<int, string> school in schools)
+            {
+                Console.WriteLine("Kool #" + school.Key + ":  " + school.Value);
             }
         }
     }
 }
 
-
-
+        
