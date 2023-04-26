@@ -1,10 +1,9 @@
-internal class Program
-    {
-        static void Main(string[] args)
+static void Main(string[] args)
         {
             Console.WriteLine("Vali meetod:");
             Console.WriteLine("Nr 1 - Tere Lõputu for loop");
             Console.WriteLine("Nr 2 - Hello World 4 korda");
+            Console.WriteLine("Nr 3 - Liitmine");
 
             int meetodiValik = int.Parse(Console.ReadLine());
 
@@ -16,6 +15,11 @@ internal class Program
             {
                 HelloWorld();
             }
+            if (meetodiValik== 3)
+            {
+                Kolmasmeetod();
+            }
+
             else
             {
                 Console.WriteLine("Vale valik!");
@@ -32,7 +36,6 @@ internal class Program
             }
         }
 
-        
         static void HelloWorld()
         {
             for (int i = 0; i < 4; i++)
@@ -40,5 +43,16 @@ internal class Program
                 Console.WriteLine("Hello, World!");
             }
         }
-    }   
+
+        static void Kolmasmeetod()
+        {
+            int sum = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                sum += i;
+            }
+            Console.WriteLine(sum);
+        }
+    }
 }
