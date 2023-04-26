@@ -4,6 +4,7 @@ static void Main(string[] args)
             Console.WriteLine("Nr 1 - Tere Lõputu for loop");
             Console.WriteLine("Nr 2 - Hello World 4 korda");
             Console.WriteLine("Nr 3 - Liitmine");
+            Console.WriteLine("Nr 4 - maja suurus");
 
             int meetodiValik = int.Parse(Console.ReadLine());
 
@@ -11,15 +12,19 @@ static void Main(string[] args)
             {
                 LoputuForLoop();
             }
-            if (meetodiValik== 2)
+            if (meetodiValik == 2)
             {
                 HelloWorld();
             }
-            if (meetodiValik== 3)
+            if (meetodiValik == 3)
             {
                 Kolmasmeetod();
             }
 
+            if (meetodiValik == 4)
+            {
+                Neljasmeetod();
+            }
             else
             {
                 Console.WriteLine("Vale valik!");
@@ -54,5 +59,27 @@ static void Main(string[] args)
             }
             Console.WriteLine(sum);
         }
+
+        static void Neljasmeetod()
+        {
+
+            Console.Write("Sisestage püramiidi kõrgus: ");
+            int korgus = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < korgus; i++)
+            {
+                for (int j = 0; j < korgus - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
     }
+
 }
