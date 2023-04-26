@@ -1,0 +1,44 @@
+internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Vali meetod:");
+            Console.WriteLine("Nr 1 - Tere Lõputu for loop");
+            Console.WriteLine("Nr 2 - Hello World 4 korda");
+
+            int meetodiValik = int.Parse(Console.ReadLine());
+
+            if (meetodiValik == 1)
+            {
+                LoputuForLoop();
+            }
+            if (meetodiValik== 2)
+            {
+                HelloWorld();
+            }
+            else
+            {
+                Console.WriteLine("Vale valik!");
+            }
+
+            Console.ReadLine();
+        }
+
+        static void LoputuForLoop()
+        {
+            for (; ; )
+            {
+                Console.WriteLine("Tere!");
+            }
+        }
+
+        
+        static void HelloWorld()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("Hello, World!");
+            }
+        }
+    }   
+}
