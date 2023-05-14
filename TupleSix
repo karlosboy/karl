@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string methodName = "TupleSix";
+
+        switch (methodName)
+        {
+            case "TupleSix":
+                TupleSix();
+                break;
+            case "TupleWithValues":
+                TupleWithValues();
+                break;
+            case "WithSortedList":
+                WithSortedList();
+                break;
+            default:
+                Console.WriteLine("Invalid method name");
+                break;
+        }
+    }
+
+    static void TupleSix()
+    {
+        var values = (1, "two", 3.0, 4, "five", 6);
+        TupleParam(values.Item1, values.Item2, values.Item3, values.Item4, values.Item5, values.Item6);
+    }
+
+    static void TupleParam(int a, string b, double c, int d, string e, int f)
+    {
+        Console.WriteLine($"Tuple values: {a}, {b}, {c}, {d}, {e}, {f}");
+    }
+
+    static void TupleWithValues()
+    {
+        var values = (42, "hello", "world");
+        Console.WriteLine($"Tuple values: {values.Item1}, {values.Item2}, {values.Item3}");
+    }
+
+    static void WithSortedList()
+    {
+        SortedList<int, string> sortedList = new SortedList<int, string>();
+        sortedList.Add(3, "three");
+        sortedList.Add(1, "one");
+        sortedList.Add(5, "five");
+        sortedList.Add(2, "two");
+        sortedList.Add(4, "four");
+
+        Console.WriteLine("SortedList contains:");
+        foreach (KeyValuePair<int, string> kvp in sortedList)
+        {
+            Console.WriteLine($"Key: {kvp.Key}, Value
