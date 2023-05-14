@@ -1,0 +1,58 @@
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string methodName = "CreateFile";
+
+        if (methodName == "CreateFile")
+        {
+            CreateFile();
+        }
+        else if (methodName == "CustomMethod")
+        {
+            CustomMethod();
+        }
+        else if (methodName == "CreateFileWithUrl")
+        {
+            CreateFileWithUrl();
+        }
+        else
+        {
+            Console.WriteLine("Invalid method name");
+        }
+    }
+
+    static void CreateFile()
+    {
+        Console.WriteLine("Creating file...");
+        File.Create("example.txt");
+        Console.WriteLine("File created successfully!");
+    }
+
+    static void CustomMethod()
+    {
+        Console.WriteLine("Executing custom method...");
+        // Your custom code here
+    }
+
+    static void CreateFileWithUrl()
+    {
+        Console.WriteLine("Creating file with URL...");
+        string url = "https://example.com/example.txt";
+        try
+        {
+            using (var client = new System.Net.WebClient())
+            {
+                client.DownloadFile(url, "example.txt");
+            }
+            Console.WriteLine("File created successfully with URL!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error creating file with URL: {ex.Message}");
+        }
+    }
+}
