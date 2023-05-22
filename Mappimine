@@ -1,0 +1,34 @@
+namespace ConsoleApp45
+{
+    internal class Program
+    {
+        private void Main(string[] args)
+        {
+            Dictionary<string, string> map = new Dictionary<string, string>();
+
+            // Lisa võtmed ja väärtused kaardile
+            map.Add("Esimene", "A");
+            map.Add("Teine", "B");
+            map.Add("Kolmas", "C");
+
+            // Prindi kõik võtmed ja nendega seotud väärtused
+            foreach (KeyValuePair<string, string> kvp in map)
+            {
+                Console.WriteLine("Võti = {0}, Väärtus = {1}", kvp.Key, kvp.Value);
+            }
+
+            // Otsi kaardilt võtit ja prindi selle väärtus
+            string value;
+            if (map.TryGetValue("Teine", out value))
+            {
+                Console.WriteLine("Teise võti on seotud väärtusega {0}", value);
+            }
+            else
+            {
+                Console.WriteLine("Teist võtit ei leitud kaardilt");
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
